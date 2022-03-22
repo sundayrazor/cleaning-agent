@@ -1,0 +1,137 @@
+<%- include("../partials/header.ejs")%>
+
+<section class="popular-places" id="popular">
+	<!-- <header class="jumbotron">
+		<div class="container">
+			<h4>Your Favourate Site</h4>
+			<p>Infomation about the shops goes here ...........</p>
+			<%if(currentUser && Number(currentUser.role) === 1){%>
+				<p>
+					<a class="btn btn-primary btn-large" href="/new">Add new product</a>
+				</p>
+			<%}%>
+		</div> 
+	</header> -->
+	<!-- <div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="section-heading">
+					<span>Your Favourate Site</span>
+					<h2>Products</h2>
+					<%if(currentUser && Number(currentUser.role) === 1){%>
+						<p>
+							<a class="btn btn-primary btn-large" href="/new">Add new product</a>
+						</p>
+					<%}%>
+				</div>
+			</div> 
+		</div> 
+		<div class="owl-carousel owl-theme">
+			<%products.forEach(function(product){%>
+			<div class="item popular-item">
+				<div class="thumb">
+					<img src="../images/<%=product.image%>" alt="">
+					<div class="text-content">
+						<h4><%=product.name%></h4>
+						<span><%=product.price%></span>
+					</div>
+					<div class="plus-button">
+						<a href="/<%=product._id%>"><i class="fa fa-plus"></i></a>
+					</div>
+				</div>
+			</div>
+			<%});%>
+		</div>
+	</div> -->
+</section>
+<!-- <div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h4>Your Favourate Site</h4>
+			<p>Infomation about the shops goes here ...........</p>
+			<%if(currentUser && Number(currentUser.role) === 1){%>
+				<p>
+					<a class="btn btn-primary btn-large" href="/shops/new">Add new store</a>
+				</p>
+			<%}%>
+		</div>
+	</header>
+	<div class="row text-center" style="display: flex; flex-wrap: wrap;">
+		<%products.forEach(function(product){%>
+			<div class="col-md-3 col-sm-9">
+				<div class="img-thumbnail">
+					<img src="../images/<%=product.image%>" class="image">
+					<div class="caption">
+						<h4><%=product.name%></h4>
+					</div>
+					<a href="/show/<%=product._id%>" class="btn btn-primary">More Info</a>
+				</div>
+			</div>
+		<%});%>
+	</div>
+</div> -->
+<section class="featured-places" id="blog">
+	<header class="jumbotron">
+		<div class="container">
+			<h4>Your Favourate Site</h4>
+			<p>Infomation about the shops goes here ...........</p>
+			<%if(currentUser && Number(currentUser.role) === 1){%>
+				<p>
+					<a class="btn btn-primary btn-large" href="/new">Add new product</a>
+				</p>
+			<%}%>
+		</div> 
+	</header>
+	<!-- <div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="section-heading">
+					<span>Featured Places</span>
+					<h2>Praesent nec dui sed urna</h2>
+				</div>
+			</div> 
+		</div>  -->
+		<div class="row">
+			<%products.forEach(function(product){%>
+			<div class="col-md-3 col-sm-9">
+				<div class="featured-item">
+					<div class="thumb">
+						<img src="../images/<%=product.image%>" alt="">
+						<!-- <div class="overlay-content">
+							<ul>
+								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star"></i></li>
+							</ul>
+						</div> -->
+						<div class="date-content">
+							<h6>R<%=product.price%></h6>
+							<!-- <span>August</span> -->
+						</div>
+					</div>
+					<div class="down-content">
+						<h4><%=product.name%></h4>
+						<span><%=product.category%></span>
+						<!-- <p><%=product.description%></p> -->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="text-button">
+									<a href="/<%=product._id%>">Details</a>
+								</div>
+							</div>
+							<!-- <div class="col-md-6">
+								<div class="text-button">
+									<a href="#">Continue Reading</a>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<%});%>
+		</div>
+	</div>
+</section>
+<%- include("../partials/footer.ejs")%>

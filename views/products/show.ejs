@@ -1,0 +1,35 @@
+<%- include("./../partials/header.ejs")%>
+<div class="container">
+    <!-- <div class="row">
+        <div class="col-md-3">
+            <p class="lead">product Site</p>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div> -->
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="img-fluid image2" src="/../images/<%=product.image%>">
+                <div class="caption-full">
+                    <h4 class="float-right">R<%=product.price%></h4>
+                    <h1><a href="#"><%=product.name%></a></h1>
+                    <p><%=product.description%></p>
+                    <p>
+                        <em>
+                            Submitted By <%=product.author.username%> 
+                        </em>
+                    </p>
+                    <%if(currentUser && product.author.id.equals(currentUser._id)){%>
+                        <a class="btn btn-sm btn-warning" href="/product<%=product._id%>/edit">Edit</a>
+                        <form class="delete-form" action="/shops/<%=shop_id%>/product<%=product._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+<%- include("./../partials/footer.ejs")%>
